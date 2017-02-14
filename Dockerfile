@@ -14,7 +14,7 @@ ENV PATH "$PATH:/opt/gradle/gradle-3.3/bin"
 
 COPY preDownloadGrade.sh /root/preDownloadGrade.sh
 
-RUN cd /home/user && \
+RUN mkdir /home/user && cd /home/user && \
     ./preDownloadGrade.sh 3.1 && \
     ./preDownloadGrade.sh 3.2 && \
     ./preDownloadGrade.sh 3.3
