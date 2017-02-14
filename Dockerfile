@@ -1,4 +1,4 @@
-FROM ubuntu-gosu-base
+FROM danny50610/ubuntu-gosu-base
 
 RUN apt-get update && apt-get -y --no-install-recommends install \
     default-jdk \
