@@ -17,7 +17,8 @@ COPY preDownloadGrade.sh /root/preDownloadGrade.sh
 RUN mkdir /home/user && cd /home/user && \
     /root/preDownloadGrade.sh 3.1 && \
     /root/preDownloadGrade.sh 3.2 && \
-    /root/preDownloadGrade.sh 3.3
+    /root/preDownloadGrade.sh 3.3 && \
+    mv /root/.gradle /home/user
     
 CMD ["/bin/bash"]
 
