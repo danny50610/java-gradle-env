@@ -15,9 +15,9 @@ ENV PATH "$PATH:/opt/gradle/gradle-3.3/bin"
 COPY preDownloadGrade.sh /root/preDownloadGrade.sh
 
 RUN mkdir /home/user && cd /home/user && \
-    ./preDownloadGrade.sh 3.1 && \
-    ./preDownloadGrade.sh 3.2 && \
-    ./preDownloadGrade.sh 3.3
+    /root/preDownloadGrade.sh 3.1 && \
+    /root/preDownloadGrade.sh 3.2 && \
+    /root/preDownloadGrade.sh 3.3
     
 CMD ["/bin/bash"]
 
