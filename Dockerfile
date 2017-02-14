@@ -4,7 +4,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
     default-jdk \
     wget \
     unzip
-
+    
 RUN cd ~ && \
     wget https://services.gradle.org/distributions/gradle-3.3-bin.zip && \
     mkdir /opt/gradle && \
@@ -12,5 +12,12 @@ RUN cd ~ && \
 
 ENV PATH "$PATH:/opt/gradle/gradle-3.3/bin"
 
+COPY preDownloadGrade.sh /root/preDownloadGrade.sh
+
+RUN cd ~ && \
+    ./preDownloadGrade.sh 3.1 && \
+    ./preDownloadGrade.sh 3.2 && \
+    ./preDownloadGrade.sh 3.3
+    
 CMD ["/bin/bash"]
 
