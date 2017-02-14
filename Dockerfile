@@ -18,7 +18,8 @@ RUN mkdir /home/user && cd /home/user && \
     /root/preDownloadGrade.sh 3.1 && \
     /root/preDownloadGrade.sh 3.2 && \
     /root/preDownloadGrade.sh 3.3 && \
-    mv /root/.gradle /home/user
+    mv /root/.gradle /home/user && \
+    chmod -R 777 /home/user/.gradle
     
 CMD ["/bin/bash"]
 
